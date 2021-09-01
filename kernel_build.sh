@@ -61,11 +61,11 @@ tg_post_msg() {
 }
 
 # Post Main Information
-tg_post_msg "<b>xKernelCompiler</b>%0ABuilder Name : <code>${KBUILD_BUILD_USER}</code>%0ABuilder Host : <code>${KBUILD_BUILD_HOST}</code>%0ADevice Defconfig: <code>${DEVICE_DEFCONFIG}</code>%0AClang Version : <code>${KBUILD_COMPILER_STRING}</code>"
+tg_post_msg "<b>KranulCompiler</b>%0ABuilder Name : <code>${KBUILD_BUILD_USER}</code>%0ABuilder Host : <code>${KBUILD_BUILD_HOST}</code>%0ADevice Defconfig: <code>${DEVICE_DEFCONFIG}</code>%0AClang Version : <code>${KBUILD_COMPILER_STRING}</code>"
 
 # Compile
 compile(){
-tg_post_msg "<b>xKernelCompiler:</b><code>Compilation has started</code>"
+tg_post_msg "<b>KranulCompiler:</b><code>Compilation has started</code>"
 cd ${KERNEL_ROOTDIR}
 make -j$(nproc) O=out ARCH=arm64 ${DEVICE_DEFCONFIG}
 make -j$(nproc) ARCH=arm64 O=out \
